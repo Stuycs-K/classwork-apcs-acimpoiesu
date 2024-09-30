@@ -68,12 +68,12 @@ public class MyArrays{
 
     System.out.println("Array 1:" + arrayToString(arr));
     System.out.println ("Array 2:" + arrayToString(arr1));
-    System.out.println ("Combined array" + concatArray(arr,arr1));
+    System.out.println ("Combined array" + arrayToString(concatArray(arr,arr1)));
 
     int [] arr3 = {0, 0, 0};
     System.out.println("Array 1:" + arrayToString(arr2));
     System.out.println ("Array 2:" + arrayToString(arr3));
-    System.out.println ("Combined array" + concatArray(arr2,arr3));
+    System.out.println ("Combined array" + arrayToString(concatArray(arr2,arr3)));
 
   }
 }

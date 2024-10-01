@@ -85,9 +85,21 @@ public class ArrayMethods {
     //DO NOT use any built in methods that "copy" an array.
     //You SHOULD write a helper method for this.
     //If you don't see a good way to do that, you should stop and look at prior methods.
-    public static int[][] copy(int[][] nums){
-      return null;//placeholder so it compiles
+    public static int[]copy(int[] nums){
+        int [] cpyarr = new int [nums.length];
+        for(int i = 0; i<nums.length;i++){
+            cpyarr[i] = nums[i];
+        }
+        return cpyarr;
     }
+    public static int[][] copy(int[][] nums){
+      int[][] cpyarr = new int[nums.length][];
+        for (int i = 0; i < nums.length; i++) {
+            cpyarr[i] = copy(nums[i]);
+        }
+        return cpyarr;
+    }
+
 
 
     public static void main(String[] args) {
@@ -118,6 +130,14 @@ public class ArrayMethods {
 
       System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array2)));
       System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array5)));
-
+      
+      int [][] copy = copy(array); 
+      System.out.println("Original array" + arrToString(array) +" Output array" + arrToString(copy));
+      array[0][0]=2222222;
+      System.out.println("Modified array" + arrToString(array) + " Output array" + arrToString(copy));//Shows the arrays aren't the exact same array
+      int [][] copy1 = copy(array1); 
+      System.out.println("Original array" + arrToString(array1) +" Output array" + arrToString(copy1));
+      array1[0][0]=2222222;
+      System.out.println("Modified array" + arrToString(array1) + " Output array" + arrToString(copy1));//Shows the arrays aren't the exact same array
     }
 }

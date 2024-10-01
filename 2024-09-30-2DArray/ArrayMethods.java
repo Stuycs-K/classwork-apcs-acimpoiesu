@@ -38,20 +38,71 @@ public class ArrayMethods{
   }
 
   /*Return the sum of all of the values in the 2D array */
-  /*public static int arr2DSum(int[][]nums){
+  public static int arr2DSum(int[][]nums){
     //use a nested loop to solve this
-    return null;//place holder return value so it compiles.
+    int sum = 0;
+    for(int i = 0; i < nums.length; i++){
+      for (int j = 0; j < nums[i].length; j++) {
+        sum += nums[i][j]; 
+    }
+    }
+
+    return sum;//place holder return value so it compiles.
   }
-*/
+
+
   /**Rotate an array by returning a new array with the rows and columns swapped.
     * You may assume the array is rectangular and neither rows nor cols is 0.
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int rows = nums[0].length;
+    int columns = nums.length;
+    int[][] ArraySwap = new int[rows][columns];
+    for (int i = 0; i < columns; i++){
+        for (int j = 0; j < rows; j++){
+            ArraySwap[j][i] = nums[i][j];
+        }
+      }
+    return ArraySwap;
   }
   public static void main (String[]args){
-    int[][] ary = new int[3][5];
-    System.out.println(arrToString(ary));
+
+int[][] array = new int[][]{{10, 20}, {30, 40, 50}, {60}};
+int[][] array1 = new int[][]{{100}, {200, 300}, {400, 500, 600}};
+int[][] array2 = new int[][]{{0, -1, -2}, {-3, -4, -5}};
+int[][] array3 = new int[][]{{1}, {}, {2, 3, 4}, {}};
+int[][] array4 = new int[][]{{}, {}};        
+int[][] array5 = new int[][]{{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
+
+int[] ary = new int[]{2, 3, 4, 9};
+System.out.println("\n ary as a String: " + arrayToString(ary));
+int[] ary1 = new int[]{};
+System.out.println("ary2 as a String: " + arrayToString(ary1));
+
+
+System.out.println("Array 5 as a String:" + arrToString(array5));
+System.out.println("Array as a String:" + arrToString(array));
+System.out.println("Array 1 as a String:" + arrToString(array1));
+System.out.println("Array 2 as a String:" + arrToString(array2));
+
+
+System.out.println("\n Original Array: " + arrToString(array) + " --> " + arrToString(swapRC(array))); 
+// Expected: "{{10, 20}, {30, 40, 50}, {60}} --> {{10, 30, 60}, {20, 40}, {50}}"
+System.out.println("Original Array: " + arrToString(array1) + " --> " + arrToString(swapRC(array1))); 
+// Expected: "{{100}, {200, 300}, {400, 500, 600}} --> {{100, 200, 400}, {300, 500}, {600}}"
+System.out.println("Original Array: " + arrToString(array2) + " --> " + arrToString(swapRC(array2))); 
+// Expected: "{{0, -1, -2}, {-3, -4, -5}} --> {{0, -3}, {-1, -4}, {-2, -5}}"
+System.out.println("Original Array: " + arrToString(array3) + " --> " + arrToString(swapRC(array3))); 
+// Expected: "{{1}, {}, {2, 3, 4}, {}} --> {{1, 2}, {3}, {4}}"
+System.out.println("Original Array: " + arrToString(array4) + " --> " + arrToString(swapRC(array4))); 
+// Expected: "{{}, {}} --> {{}, {}}"
+
+System.out.println("\nSum of the values in Array: " + arr2DSum(array)); // Expected sum: 210
+System.out.println("Sum of the values in Array: " + arr2DSum(array1)); // Expected sum: 2100
+System.out.println("Sum of the values in Array: " + arr2DSum(array2)); // Expected sum: -15
+System.out.println("Sum of the values in Array: " + arr2DSum(array3)); // Expected sum: 10
+System.out.println("Sum of the values in Array: " + arr2DSum(array4)); // Expected sum: 0
+
   }
 }

@@ -6,7 +6,7 @@ public class ArrayMethods {
     * "[2, 3, 4, 9]"
     * Note the comma+space between values, and between values
     */
-    public static String arrayToString(int[] nums) {
+    public static String arrToString(int[] nums) {
         String str = "[";
         for (int i = 0; i < nums.length; i++) {
             str += nums[i];
@@ -25,7 +25,7 @@ public class ArrayMethods {
     public static String arrToString(int[][] ary) {
         String str = "[";
         for (int i = 0; i < ary.length; i++) {
-            str += arrayToString(ary[i]);
+            str += arrToString(ary[i]);
             if (i < ary.length - 1) {
                 str += ", ";
             }
@@ -50,7 +50,7 @@ public class ArrayMethods {
     public static int[][] swapRC(int[][] nums) {
         int rows = nums.length; // Number of rows in the input array
         int columns = nums[0].length;
-        int[][] swappedArray = new int[columns][rows]; 
+        int[][] swappedArray = new int[columns][rows];
 
         // Perform the row-column swap
         for (int i = 0; i < rows; i++) {
@@ -60,7 +60,35 @@ public class ArrayMethods {
         }
 
         return swappedArray; // Return the swapped array
+      }
+        //3. Modify a given 2D array of integer as follows:
+    //Replace all the negative values:
+    //-When the row number is the same as the column number replace
+    //that negative with the value 1
+    //-All other negatives replace with 0
+    public static int[][] replaceNegative(int[][] vals){
+    for (int i = 0; i<vals.length;i++){
+      for(int j = 0; j<vals[i].length;j++){
+        if (0>vals[i][j]){
+          vals[i][j]=0;
+          if(i == j){
+            vals[i][j]=1;
+          }
+        }
+      }
     }
+    return vals;
+  }
+
+    //4. Make a copy of the given 2d array.
+    //When testing : make sure that changing the original does NOT change the copy.
+    //DO NOT use any built in methods that "copy" an array.
+    //You SHOULD write a helper method for this.
+    //If you don't see a good way to do that, you should stop and look at prior methods.
+    public static int[][] copy(int[][] nums){
+      return null;//placeholder so it compiles
+    }
+
 
     public static void main(String[] args) {
       int[][] array = new int[][]{{10, 20, 30}, {40, 50, 60}};
@@ -68,10 +96,12 @@ public class ArrayMethods {
       int[][] array2 = new int[][]{{0, -1, -2}, {-3, -4, -5}};
       int[][] array5 = new int[][]{{2, 3, 4}, {5, 6, 7}, {8, 9, 10}};
 
+      System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array2)));
+
       int[] ary = new int[]{2, 3, 4, 9};
-      System.out.println("\nary as a String: " + arrayToString(ary));
+      System.out.println("\nary as a String: " + arrToString(ary));
       int[] ary1 = new int[]{};
-      System.out.println("ary1 as a String: " + arrayToString(ary1));
+      System.out.println("ary1 as a String: " + arrToString(ary1));
 
       System.out.println("Array 5 as a String: " + arrToString(array5));
       System.out.println("Array as a String: " + arrToString(array));

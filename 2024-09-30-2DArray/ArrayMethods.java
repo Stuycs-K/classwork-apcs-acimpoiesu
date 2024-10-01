@@ -94,9 +94,7 @@ public class ArrayMethods {
       int[][] array = new int[][]{{10, 20, 30}, {40, 50, 60}};
       int[][] array1 = new int[][]{{100, 200}, {300, 400}};
       int[][] array2 = new int[][]{{0, -1, -2}, {-3, -4, -5}};
-      int[][] array5 = new int[][]{{2, 3, 4}, {5, 6, 7}, {8, 9, 10}};
-
-      System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array2)));
+      int[][] array5 = new int[][]{{-2, 3, 4}, {5, -6, 7}, {8, 9, 10}};
 
       int[] ary = new int[]{2, 3, 4, 9};
       System.out.println("\nary as a String: " + arrToString(ary));
@@ -116,6 +114,10 @@ public class ArrayMethods {
       System.out.println("\nSum of the values in Array: " + arr2DSum(array)); // Expected sum: 210
       System.out.println("Sum of the values in Array: " + arr2DSum(array1)); // Expected sum: 1000
       System.out.println("Sum of the values in Array: " + arr2DSum(array2)); // Expected sum: -15
-      System.out.println("Sum of the values in Array: " + arr2DSum(array5)); // Expected sum: 54
+      System.out.println("Sum of the values in Array: " + arr2DSum(array5)); // Expected sum: 38
+
+      System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array2)));
+      System.out.println("array2 as nonnegative:" + arrToString(replaceNegative(array5)));
+
     }
 }

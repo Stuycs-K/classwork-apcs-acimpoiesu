@@ -11,6 +11,16 @@ public class ArrayDemo{
     if (htmlTable(test1).equals("<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>0</td><td>1</td><td>2</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr></table>")){
       System.out.println("Test passed");
     }
+    int[][] test2 = {{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Expected 0, Result: " + countZeros2D(test2));
+    if (htmlTable(test2).equals("<table><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table>")) {
+    System.out.println("Test passed");
+    int[][] test3 = {};
+    System.out.println("Expected 0, Result: " + countZeros2D(test3));
+    if (htmlTable(test3).equals("<table></table>")) {
+      System.out.println("Test passed");
+    }
+  }
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -107,14 +117,12 @@ public class ArrayDemo{
       int rows = nums.length; // Number of rows in the input array
       int columns = nums[0].length;
       int[][] swappedArray = new int[columns][rows];
-
       // Performs the row-column swap
       for (int i = 0; i < rows; i++) {
           for (int j = 0; j < columns; j++) {
               swappedArray[j][i] = nums[i][j]; // Swaps the elements
           }
       }
-
       return swappedArray; // Returns the swapped array
     }
   //6. Make an HTML table by putting a table tag around the entire 2d array,

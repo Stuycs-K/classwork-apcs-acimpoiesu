@@ -6,7 +6,11 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
     int[][] test1= new int [][]{{1,2,3,4}, {0,1,2}, {1,0,0,0}};
+    System.out.println("Built in function" + Arrays.deepToString(test1) + "My function" + arrToString(test1));
     System.out.println("Expected 4, Result:" +countZeros2D(test1));
+    if (htmlTable(test1).equals("<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>0</td><td>1</td><td>2</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr></table>")){
+      System.out.println("Test passed");
+    }
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -120,6 +124,14 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String table = "<table>";
+    for (int i = 0; i<nums.length;i++){
+      table += "<tr>";
+      for (int j = 0; j<nums[i].length;j++){
+        table += ("<td>" + nums[i][j] + "</td>");
+      }
+      table += "</tr>";
+    }
+    return table += "</table>";
   }
 }

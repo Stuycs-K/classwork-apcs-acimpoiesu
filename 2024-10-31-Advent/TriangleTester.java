@@ -19,7 +19,7 @@ public class TriangleTester{
       Scanner scanner = new Scanner(file);
       while (scanner.hasNextLine()) {
         String line = scanner.nextLine();
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s+");
         if (parts.length == 3) {
           column1.add(Integer.parseInt(parts[0]));
           column2.add(Integer.parseInt(parts[1]));

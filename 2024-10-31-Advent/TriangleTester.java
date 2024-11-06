@@ -23,6 +23,9 @@ public class TriangleTester{
         count ++;
       }
       sides = new int[3];
+      if (file.hasNextLine()) {
+      file.nextLine();
+      }
   }
   file.close();
   } catch (FileNotFoundException e) {
@@ -33,22 +36,8 @@ public class TriangleTester{
 
 
   public static boolean isTrig (int[] sides){
-    int max = 0;
-    int second = 0;
-    int min = 0;
-    for(int i =0; i < 3; i++){
-      if(sides[i] > max){
-        second = max;
-        max = sides[i];
-      }
-      else if (sides[i] > second){
-        min = second;
-        second = sides[i];
-      }
-      else{
-        min = sides[i];
-      }
-    }
-    return (sides[1] + sides[2] > sides[0]);
-  }
+  return ((sides[0] + sides[1] > sides[2]) &&
+  (sides[0] + sides[2] > sides[1]) &&
+  (sides[1] + sides[2] > sides[0]));
+}
 }

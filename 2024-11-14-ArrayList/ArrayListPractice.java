@@ -21,15 +21,18 @@ public class ArrayListPractice {
     }
   }
 }
-/*
 public static ArrayList<String> makeReversedList( ArrayList<String> original){
   //return a new ArrayList that is in the reversed order of the original.
+  ArrayList<String> reverseary = new ArrayList<String>(original.size());
+  for (int i = original.size()-1; i>= 0; i--){
+    reverseary.add(original.get(i));
+  }
+  return reverseary;
 }
 
-public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+//public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
-}
-*/
+//}
 }

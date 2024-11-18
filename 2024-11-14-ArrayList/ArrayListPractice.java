@@ -30,9 +30,20 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
   return reverseary;
 }
 
-//public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
-//}
+  ArrayList<String> mixedary = new ArrayList<String>(a.size()+b.size());
+  for (int i = 0; i < Math.max(a.size(), b.size()); i++){
+    if ( i < a.size()){
+      mixedary.add(a.get(i));
+    }
+    if ( i < b.size()){
+      mixedary.add(b.get(i));
+    }
+  }
+  return mixedary;
 }
+}
+

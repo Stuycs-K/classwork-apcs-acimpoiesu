@@ -23,15 +23,15 @@ public class messagedecoder {
             input.close();
             String correctmessage = "";
             for (int j = 0; j < length; j++) {
-                int maxFreq = 0;
-                char mostfreq = ' ';
+                int minFreq = 999999999;
+                char leastfreq = ' ';
                 for (int i = 0; i < 26; i++) {
-                    if (frequencies[j][i] > maxFreq) {
-                        maxFreq = frequencies[j][i];
-                        mostfreq = (char) (i + 'a');
+                    if (frequencies[j][i] < minFreq) {
+                        minFreq = frequencies[j][i];
+                        leastfreq = (char) (i + 'a');
                     }
                 }
-                correctmessage += mostfreq;
+                correctmessage += leastfreq;
             }
             return correctmessage;
         } 

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Driver{
     public static void drawBorder(){
         for(int i = 0; i<80; i++){
@@ -16,7 +17,16 @@ public class Driver{
             System.out.print("*");
         }
         }
+    public static int[] genranarry(){
+        int [] rannums = new int [3];
+        for(int i = 0; i < 3; i++){
+            rannums[i] = (int) (Math.random() * 100);
+        }
+        return rannums;
+    }
     public static void main(String[] args) {
         drawBorder();
+        System.out.print(Text.RESET);
+        System.out.println(Arrays.toString(genranarry()));
     }
 }

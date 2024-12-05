@@ -26,13 +26,22 @@ public class Driver{
     }
     public static void placerannums(int[]nums){
         for(int i = 0; i<3;i++){
-            go(2,20*i + 20);
-            if
+            Text.go(2,20*i + 20);
+            if(nums[i] < 25){
+                Text.color(Text.RED,Text.BRIGHT);
+            }
+            else if (nums[i] > 75){
+                Text.color(Text.GREEN,Text.BRIGHT);
+            }
+            else{
+                Text.color(Text.WHITE);
+            }
+            System.out.print(nums[i]);
         }
     }
     public static void main(String[] args) {
         drawBorder();
         System.out.print(Text.RESET);
-        System.out.println(Arrays.toString(genranarry()));
+        //System.out.println(Arrays.toString(genranarry()));
     }
 }

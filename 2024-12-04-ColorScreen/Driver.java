@@ -39,8 +39,18 @@ public class Driver{
             System.out.print(nums[i]);
         }
     }
+    public static void makeseperator(){
+        Text.go(3, 1);
+        for (int i = 0; i <80;i++){
+            System.out.print("-");
+        }
+    }
     public static void main(String[] args) {
+        for(int i = 0; i < 16;i++){
+            System.out.println();
+        }
         drawBorder();
+        System.out.print(Text.RESET);
         placerannums(genranarry());
         System.out.print(Text.RESET);
         //System.out.println(Arrays.toString(genranarry()));

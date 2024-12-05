@@ -24,6 +24,12 @@ public class Driver{
         }
         return rannums;
     }
+    public static void placerannums(int[]nums){
+        for(int i = 0; i<3;i++){
+            go(2,20*i + 20);
+            if
+        }
+    }
     public static void main(String[] args) {
         drawBorder();
         System.out.print(Text.RESET);

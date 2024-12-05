@@ -41,6 +41,7 @@ public class Driver{
     }
     public static void main(String[] args) {
         drawBorder();
+        placerannums(genranarry());
         System.out.print(Text.RESET);
         //System.out.println(Arrays.toString(genranarry()));
     }

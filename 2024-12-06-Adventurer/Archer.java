@@ -29,6 +29,9 @@ public class Archer extends Adventurer{
   public String support(){
     this.setHP(100);
     return "Healed self";
-  };
-  public abstract String specialAttack(Adventurer other);
+  }
+  public String specialAttack(Adventurer other){
+    other.applyDamage(50);
+    return "Used special attack";
+  }
 }

@@ -15,6 +15,13 @@ public class Backtracking{
     if (start >= nums.length){
       return target == 0;
     }
+    if(groupSum(start + 1 , nums, target - nums[start])){
+      return true;
+    }
+    if(groupSum(start + 1 , nums, target)){
+      return true;
+    }
+    return false;
   }
   public static void main(String[] args) {
     System.out.println(countNoDoubleLetterWords(2,"", "abc"));

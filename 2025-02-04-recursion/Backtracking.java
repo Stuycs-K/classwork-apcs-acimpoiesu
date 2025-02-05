@@ -25,5 +25,6 @@ public class Backtracking{
   }
   public static void main(String[] args) {
     System.out.println(countNoDoubleLetterWords(2,"", "abc"));
+    System.out.println(groupSum(0,new int[]{1,2,3,4}, 6));
   }
 }

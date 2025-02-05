@@ -30,11 +30,17 @@ public class Backtracking{
     if (index > nums.length){
       return sum1 == sum2;
     }
-    if (splitArray(nums, index + 1, sum1 + nums[index], sum2)){
+    int sum1 = 0;
+    int sum2 = 0;
+    for (int i = 0; i < nums.length; i++){
+    if (splitArray(nums)){
+      sum1 += nums[i];
       return true;
-    }
-    if (splitArray(nums, index + 1, sum1, sum2 + nums[index])){
+      }
+    if (splitArray(nums, index + 1, sum1, sum2 + nums[i])){
+      sum2 += nums[i];
       return true;
+      }
     }
     return false;
   }

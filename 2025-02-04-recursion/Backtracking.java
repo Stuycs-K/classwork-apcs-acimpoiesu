@@ -49,10 +49,13 @@ public class Backtracking{
     if (start >= nums.length){
       return target == 0;
     }
-    if(groupSum(start + 1 , nums, target - nums[start])){
+    if (nums[start] == 6){
+      groupSum6(start + 1, nums, target - 6);
+    }
+    else if(groupSum6(start + 1 , nums, target - nums[start])){
       return true;
     }
-    if(groupSum(start + 1 , nums, target)){
+    else if(groupSum6(start + 1 , nums, target)){
       return true;
     }
     return false;

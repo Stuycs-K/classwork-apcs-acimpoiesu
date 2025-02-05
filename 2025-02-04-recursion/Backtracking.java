@@ -1,4 +1,5 @@
 public class Backtracking{
+
   public static long countNoDoubleLetterWords(int length,String word, String letters){
     if (length == 0){
       return 1;
@@ -11,6 +12,7 @@ public class Backtracking{
     }
     return counter;
   }
+
   public static boolean groupSum(int start, int[] nums, int target) {
     if (start >= nums.length){
       return target == 0;
@@ -23,6 +25,11 @@ public class Backtracking{
     }
     return false;
   }
+
+  public boolean splitArray(int[] nums) {
+    if ()
+  }
+
   public static void main(String[] args) {
     System.out.println(countNoDoubleLetterWords(2,"", "abc"));
     System.out.println(groupSum(0,new int[]{1,2,3,4}, 6));

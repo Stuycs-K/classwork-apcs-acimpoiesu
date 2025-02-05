@@ -27,9 +27,6 @@ public class Backtracking{
   }
 
   public static boolean splitArray(int[] nums) {
-    if (index > nums.length){
-      return sum1 == sum2;
-    }
     int sum1 = 0;
     int sum2 = 0;
     for (int i = 0; i < nums.length; i++){
@@ -37,10 +34,26 @@ public class Backtracking{
       sum1 += nums[i];
       return true;
       }
-    if (splitArray(nums, index + 1, sum1, sum2 + nums[i])){
+    if (splitArray(nums)){
       sum2 += nums[i];
       return true;
       }
+    if (i > nums.length){
+      return sum1 == sum2;
+      }
+    }
+    return false;
+  }
+
+  public static boolean groupSum6(int start, int[] nums, int target) {
+    if (start >= nums.length){
+      return target == 0;
+    }
+    if(groupSum(start + 1 , nums, target - nums[start])){
+      return true;
+    }
+    if(groupSum(start + 1 , nums, target)){
+      return true;
     }
     return false;
   }
@@ -48,6 +61,7 @@ public class Backtracking{
   public static void main(String[] args) {
     System.out.println(countNoDoubleLetterWords(2,"", "abc"));
     System.out.println(groupSum(0,new int[]{1,2,3,4}, 6));
-    System.out.println(splitArray(new int []{1,2,3,4}))
+    System.out.println(splitArray(new int []{1,2,3,4}));
+    System.out.println(groupSum6(0,new int[]{1,2,3,4,6}, 6));
   }
 }

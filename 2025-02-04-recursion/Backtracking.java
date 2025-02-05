@@ -26,12 +26,22 @@ public class Backtracking{
     return false;
   }
 
-  public boolean splitArray(int[] nums) {
-    if ()
+  public static boolean splitArray(int[] nums) {
+    if (index > nums.length){
+      return sum1 == sum2;
+    }
+    if (splitArray(nums, index + 1, sum1 + nums[index], sum2)){
+      return true;
+    }
+    if (splitArray(nums, index + 1, sum1, sum2 + nums[index])){
+      return true;
+    }
+    return false;
   }
 
   public static void main(String[] args) {
     System.out.println(countNoDoubleLetterWords(2,"", "abc"));
     System.out.println(groupSum(0,new int[]{1,2,3,4}, 6));
+    System.out.println(splitArray(new int []{1,2,3,4}))
   }
 }
